@@ -8,7 +8,7 @@ const roomUsers = {};
 
 app.use(
   cors({
-    origin: "https://online-code-compiler-eight.vercel.app/",
+    origin: "https://online-code-compiler-eight.vercel.app",
   })
 );
 
@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://online-code-compiler-eight.vercel.app/",
+    origin: "https://online-code-compiler-eight.vercel.app",
     methods: ["GET", "POST"],
   },
 });
