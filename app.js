@@ -18,7 +18,6 @@ const io = new Server(server, {
   cors: {
     origin: "https://online-code-compiler-kv7v.vercel.app/",
     methods: ["GET", "POST"],
-    credentials: true,
   },
 });
 
