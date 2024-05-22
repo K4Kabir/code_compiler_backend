@@ -47,8 +47,11 @@ io.on("connection", (socket) => {
   });
 
   socket.on("cursor_track", (data) => {
-    console.log(data);
     socket.to(data.room).emit("cursor_changing", data.cursor);
+  });
+
+  socket.on("configuration_change", (data) => {
+    socket.to(data.room).emit("change_configuration", data);
   });
 
   socket.on("disconnect", () => {
