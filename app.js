@@ -54,6 +54,11 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("change_configuration", data);
   });
 
+  socket.on("code_ran", (data) => {
+    console.log(data, "CODE");
+    socket.to(data.room).emit("code_ran_by_other", { ...data, id: socket.id });
+  });
+
   socket.on("disconnect", () => {
     for (const roomName in roomUsers) {
       const userIndex = roomUsers[roomName].indexOf(socket.id);
